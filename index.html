@@ -5,22 +5,38 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<!-- NEW CODE: Import Modern Serif Font (Playfair Display) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
 		<style>
 			.work-item .image {
 				pointer-events: none !important;
 			}
 			
+			/* NEW CODE: Apply the Modern Serif font to all text elements */
 			body, h1, h2, h3, h4, h5, h6, p, a, li, span, strong, label {
 				color: #000000 !important;
+				font-family: 'Playfair Display', serif !important;
 			}
 
-			/* --- NEW CODE: Right Side Background Image --- */
+			/* NEW CODE: Right Side Background Image */
 			#main {
 				background-image: url("images/rightsidebackground.jpg") !important;
 				background-size: cover !important;
 				background-position: center !important;
 				background-attachment: fixed !important;
 				background-repeat: no-repeat !important;
+			}
+
+			/* NEW CODE: Target the brand name to make it white and larger */
+			#header h1 strong {
+				color: #ffffff !important;
+				font-size: 1.6em !important; /* Increase this number (e.g., 1.8em or 2em) to make it even larger */
+				display: inline-block;
+				margin-bottom: 8px; /* Adds a little breathing room below the brand name */
 			}
 		</style>
 	</head>
@@ -42,8 +58,8 @@
 							<h2>Bringing warmth, serenity, and mindfulness<br />
 							into homes and workspaces.</h2>
 						</header>
-						<p>Mezhuku is a Kerala-based handcrafted candle and lifestyle brand inspired by stories, nostalgia, comfort, and slow living. We create thoughtfully crafted candles designed to bring warmth, atmosphere, and meaningful experiences into everyday spaces. From cozy chai-inspired collections to artistic seasonal creations, each product is made with care and attention to detail.</p>
-						<p>Beyond candles, Mezhuku celebrates creativity, storytelling, and the beauty of handmade living through design, craft, and community. Founded by a small team of passionate creators, we are building a brand that values authenticity, craftsmanship, and moments worth remembering. Based in Kerala, India.</p>
+						<p>Mezhuku is a sustainable candle brand creating eco-friendly, recyclable, and toxin-free candles. Crafted from 100% pure soy wax and natural essential oils ethically sourced from the Western Ghats, we care for both people and the planet.</p>
+						<p>We partner with organizations to deliver meaningful corporate gifts that strengthen ESG (Environmental, Social & Governance) and CSR initiatives. Our gifts are sustainable, recyclable with zero-plastic packaging, authentic, and fully customizable to reflect your brand identity.</p>
 						<ul class="actions">
 							<li><a href="#two" class="button">View Our Collection</a></li>
 						</ul>
