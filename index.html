@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
-		<!-- NEW CODE: Import Modern Serif Font (Playfair Display) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -32,12 +31,12 @@
 			}
 
 			/* NEW CODE: Target the brand name to make it white and larger */
-#header h1 strong {
-	color: #ffffff !important;
-	font-size: 1.6em !important; 
-	display: block; /* <-- This is the changed line */
-	margin-bottom: 8px; 
-}
+			#header h1 strong {
+				color: #ffffff !important;
+				font-size: 1.6em !important; 
+				display: block; 
+				margin-bottom: 8px; 
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -46,8 +45,8 @@
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="Mezhuku Ecostore Logo" /></a>
 					<h1><strong>MEZHUKU ECOSTORE</strong><br />
-<span style="color: #ffffff !important;">A sustainable brand rooted<br />
-in the lush nature of Kerala.</span></h1>
+					<span style="color: #ffffff !important;">A sustainable brand rooted<br />
+					in the lush nature of Kerala.</span></h1>
 				</div>
 			</header>
 
@@ -60,7 +59,7 @@ in the lush nature of Kerala.</span></h1>
 						</header>
 						<p>Mezhuku is a Kerala-based lifestyle brand specializing in handcrafted candles and curated goods that celebrate the art of slow living. Our collections are inspired by nostalgia, comfort, and the quiet stories of everyday life. Whether it is a scent that evokes a cherished memory or an artistic piece for your space, every creation is crafted with meticulous attention to detail.</p>
 						<p>Founded by Punnya, the Mezhuku team is united by a commitment to authenticity, craftsmanship, and sustainable practices.</p>
-					<p>We believe in turning the everyday into moments worth remembering.<p>
+					    <p>We believe in turning the everyday into moments worth remembering.</p>
 						<ul class="actions">
 							<li><a href="#two" class="button">View Our Collection</a></li>
 						</ul>
@@ -152,17 +151,30 @@ in the lush nature of Kerala.</span></h1>
 						<p>Interested in exploring our products for your store, or looking to elevate your corporate gifting? Send us a message to discuss bulk orders, custom hampers, and how we can tailor our sustainable creations to match your brand identity.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								
+								<form id="enquiryForm" method="post">
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name / Company Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Which products or hampers are you interested in?" rows="4"></textarea></div>
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="name" id="name" placeholder="Name / Company Name" required />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="email" id="email" placeholder="Email Address" required />
+										</div>
+										<div class="col-12">
+											<input type="text" name="product" id="product" placeholder="Which products or hampers are you interested in?" required />
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="Additional Message (Optional)" rows="4"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" id="submitBtn" value="Send Message" /></li>
+											</ul>
+											<p id="formStatus" style="display:none; font-weight: bold; margin-top: 15px;"></p>
+										</div>
 									</div>
 								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
+								</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
 									<li>
@@ -201,11 +213,49 @@ in the lush nature of Kerala.</span></h1>
 			</footer>
 
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+				e.preventDefault(); 
+				
+				const form = this;
+				const btn = document.getElementById('submitBtn');
+				const status = document.getElementById('formStatus');
+				
+				// Disable button to prevent duplicate submissions
+				btn.value = 'Sending...';
+				btn.disabled = true;
+				status.style.display = 'none';
+
+				const formData = new FormData(form);
+				const data = new URLSearchParams(formData);
+
+				// IMPORTANT: Replace this with your generated Google Web App URL
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbxy02Okiema2WaW2kqXZ2_92FoDuXAFOmvrzXzMKVp6DMexIKeMgwDi8TkLxiZxKvwpXQ/exec';
+
+				fetch(scriptURL, { method: 'POST', body: data })
+					.then(response => {
+						status.style.display = 'block';
+						status.style.color = '#3e8e41'; // Success green
+						status.innerText = 'Thank you! Your enquiry has been sent successfully.';
+						form.reset();
+						btn.value = 'Send Message';
+						btn.disabled = false;
+					})
+					.catch(error => {
+						status.style.display = 'block';
+						status.style.color = '#d9534f'; // Error red
+						status.innerText = 'We encountered an issue submitting your enquiry. Please try again later.';
+						btn.value = 'Send Message';
+						btn.disabled = false;
+					});
+			});
+		</script>
 
 	</body>
 </html>
