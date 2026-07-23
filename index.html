@@ -6,19 +6,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
+		<!-- NEW CODE: Updated Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 		<style>
 			.work-item .image {
 				pointer-events: none !important;
 			}
 			
-			/* NEW CODE: Apply the Modern Serif font to all text elements */
-			body, h1, h2, h3, h4, h5, h6, p, a, li, span, strong, label {
+			/* NEW CODE: Apply Lora to Body Text */
+			body, p, a, li, span, label, input, textarea {
 				color: #000000 !important;
-				font-family: 'Playfair Display', serif !important;
+				font-family: 'Lora', serif !important;
+			}
+
+			/* NEW CODE: Apply Cormorant Garamond to Headings */
+			h1, h2, h3, h4, h5, h6, strong {
+				color: #000000 !important;
+				font-family: 'Cormorant Garamond', serif !important;
 			}
 
 			/* NEW CODE: Right Side Background Image */
@@ -36,6 +43,15 @@
 				font-size: 1.6em !important; 
 				display: block; 
 				margin-bottom: 8px; 
+			}
+
+			/* Highlight styling for the workshop text */
+			.workshop-highlight {
+				background-color: rgba(255, 255, 255, 0.8);
+				padding: 20px;
+				border-radius: 8px;
+				margin-top: 20px;
+				border-left: 4px solid #d4af37;
 			}
 		</style>
 	</head>
@@ -60,85 +76,148 @@
 						<p>Mezhuku is a Kerala-based lifestyle brand specializing in handcrafted candles and curated goods that celebrate the art of slow living. Our collections are inspired by nostalgia, comfort, and the quiet stories of everyday life. Whether it is a scent that evokes a cherished memory or an artistic piece for your space, every creation is crafted with meticulous attention to detail.</p>
 						<p>Founded by Punnya, the Mezhuku team is united by a commitment to authenticity, craftsmanship, and sustainable practices.</p>
 					    <p>We believe in turning the everyday into moments worth remembering.</p>
-						<ul class="actions">
+						
+						<!-- NEW CODE: Workshop details added here -->
+						<div class="workshop-highlight">
+							<h3>✨ Ignite Your Creativity: Join Our Workshops!</h3>
+							<p>Ever wondered how to capture a memory in a scent? We host hands-on <strong>Candle-Making Workshops</strong> (available both <strong>online and offline</strong>) designed for beginners and enthusiasts alike. Dive into the art of slow living, learn the secrets of wax and fragrance blending, and craft your own magical creations.</p>
+							<p>To learn more or book your spot, drop us a message in the <a href="#three"><strong>enquiry space below</strong></a>, or directly <strong><a href="https://instagram.com/mezhuku_ecostore" target="_blank">DM us on our Instagram page!</a></strong></p>
+						</div>
+
+						<ul class="actions" style="margin-top: 20px;">
 							<li><a href="#two" class="button">View Our Collection</a></li>
+							<li><a href="#three" class="button">Enquire About Workshops</a></li>
 						</ul>
 					</section>
 
 				<section id="two">
 						<h2>Our Products</h2>
 						<div class="row">
+							<!-- 01 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/01.jpg" alt="Chai Candle" /></span>
-								<h3>Chai Candle</h3>
-								<h4>Price: Rs.280</h4>
-								<p>Comforting chai-aroma candle for a warm, spicy, and inviting ambiance.</p>
+								<span class="image fit"><img src="images/thumbs/01.jpg" alt="Signature Candle" /></span>
+								<h3>Signature Candle (100g)</h3>
+								<h4>Price: Rs. 390/-</h4>
+								<p>Our exclusive signature blend, carefully crafted to deliver a premium and unforgettable aromatic experience for your space.</p>
 							</article>
+							<!-- 02 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/02.jpg" alt="Laddoo Candle" /></span>
-								<h3>Laddoo Candle</h3>
-								<h4>Price: Rs.90</h4>
-								<p>Festive laddoo-shaped candle crafted with natural essential oils.</p>
+								<span class="image fit"><img src="images/thumbs/02.jpg" alt="Big Jar Candle" /></span>
+								<h3>Big Jar Candle (100g)</h3>
+								<h4>Price: Rs. 340/-</h4>
+								<p>Long-lasting soy wax candle in a large reusable jar, providing hours of delightful, clean-burning fragrance.</p>
 							</article>
+							<!-- 03 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/03.jpg" alt="Bubble Candle" /></span>
-								<h3>Bubble Candle</h3>
-								<h4>Price: Rs.80</h4>
-								<p>Aesthetic and unique bubble-shaped soy wax candle.</p>
+								<span class="image fit"><img src="images/thumbs/03.jpg" alt="Small Jar Candle" /></span>
+								<h3>Small Jar Candle (60g)</h3>
+								<h4>Price: Rs. 200/-</h4>
+								<p>A classic and elegant soy wax candle poured perfectly into a sustainable, aesthetic small glass jar.</p>
 							</article>
+							<!-- 04 -->
 							<article class="col-6 col-12-xsmall work-item">
 								<span class="image fit"><img src="images/thumbs/04.jpg" alt="Mini Jar Candle" /></span>
-								<h3>Mini Jar Candle</h3>
-								<h4>Price: Rs.150</h4>
-								<p>Compact and convenient soy wax candle in a reusable mini jar.</p>
+								<h3>Mini Jar Candle (45g)</h3>
+								<h4>Price: Rs. 170/-</h4>
+								<p>Compact and convenient soy wax candle in a reusable mini jar, perfect for gifting or cozying up small spaces.</p>
 							</article>
+							<!-- 05 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/05.jpg" alt="Small Jar Candle" /></span>
-								<h3>Small Jar Candle</h3>
-								<h4>Price: Rs.200</h4>
-								<p>Classic soy wax candle in a sustainable small glass jar.</p>
+								<span class="image fit"><img src="images/thumbs/05.jpg" alt="The Little Collection Candle" /></span>
+								<h3>The Little Collection Candle (4 in a pack)</h3>
+								<h4>Price: Rs. 300/-</h4>
+								<p>A delightful curated set of four 30g miniature candles. The ideal way to sample our favorite fragrances or share the light.</p>
 							</article>
+							<!-- 06 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/06.jpg" alt="Big Jar Candle" /></span>
-								<h3>Big Jar Candle</h3>
-								<h4>Price: Rs.340</h4>
-								<p>Long-lasting soy wax candle in a large reusable jar.</p>
+								<span class="image fit"><img src="images/thumbs/06.jpg" alt="Little Heart Candle" /></span>
+								<h3>Little Heart Candle</h3>
+								<h4>Price: Rs. 180/-</h4>
+								<p>A charming, miniature heart-shaped piece that brings a touch of warmth and sweet romance to any corner of your room.</p>
 							</article>
+							<!-- 07 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/07.jpg" alt="Coconut Shell Candle" /></span>
-								<h3>Coconut Shell Candle</h3>
-								<h4>Price: Rs.500</h4>
-								<p>Eco-friendly, toxin-free candle poured into an authentic, natural coconut shell.</p>
+								<span class="image fit"><img src="images/thumbs/07.jpg" alt="Bubble Candle" /></span>
+								<h3>Bubble Candle</h3>
+								<h4>Price: Rs. 80/-</h4>
+								<p>Aesthetic and unique bubble-shaped soy wax candle that serves as a beautiful piece of modern home decor.</p>
 							</article>
+							<!-- 08 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/08.jpg" alt="Snowflakes Candle" /></span>
-								<h3>Snowflakes Candle</h3>
-								<h4>Price: Rs.220</h4>
-								<p>Delicate snowflake-shaped candle for a cozy winter vibe.</p>
+								<span class="image fit"><img src="images/thumbs/08.jpg" alt="Laddoo Candle" /></span>
+								<h3>Laddoo Candle</h3>
+								<h4>Price: Rs. 90/-</h4>
+								<p>Festive laddoo-shaped candle crafted with natural essential oils to brighten up your traditional celebrations.</p>
 							</article>
+							<!-- 09 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/09.jpg" alt="Peony Candle" /></span>
+								<span class="image fit"><img src="images/thumbs/09.jpg" alt="Chai Candle" /></span>
+								<h3>Chai Candle</h3>
+								<h4>Price: Rs. 280/-</h4>
+								<p>Comforting chai-aroma candle designed to create a warm, spicy, and deeply inviting ambiance.</p>
+							</article>
+							<!-- 10 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/10.jpg" alt="Coconut Candle" /></span>
+								<h3>Coconut Candle</h3>
+								<h4>Price: Rs. 500/-</h4>
+								<p>Eco-friendly, toxin-free candle hand-poured directly into an authentic, natural coconut shell.</p>
+							</article>
+							<!-- 11 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/11.jpg" alt="Sunflower Candle" /></span>
+								<h3>Sunflower Candle</h3>
+								<h4>Price: Rs. 60/-</h4>
+								<p>A bright and cheerful sunflower-shaped piece that adds a refreshing splash of nature-inspired beauty to your day.</p>
+							</article>
+							<!-- 12 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/12.jpg" alt="Peony Candle" /></span>
 								<h3>Peony Candle</h3>
-								<h4>Price: Rs.250</h4>
-								<p>Beautiful peony flower-shaped candle with a fresh floral scent.</p>
+								<h4>Price: Rs. 250/-</h4>
+								<p>Beautiful, intricately detailed peony flower-shaped candle offering a light and fresh floral scent.</p>
 							</article>
+							<!-- 13 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/10.jpg" alt="Christmas Tree Candle" /></span>
+								<span class="image fit"><img src="images/thumbs/13.jpg" alt="Christmas Tree Candle" /></span>
 								<h3>Christmas Tree Candle</h3>
-								<h4>Price: Rs.250</h4>
-								<p>Festive tree-shaped candle to bring holiday cheer to your space.</p>
+								<h4>Price: Rs. 250/-</h4>
+								<p>A festive tree-shaped piece to bring joyful holiday cheer and seasonal magic into your home.</p>
 							</article>
+							<!-- 14 -->
 							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/11.jpg" alt="Heart Candle" /></span>
+								<span class="image fit"><img src="images/thumbs/14.jpg" alt="Snowflakes Candle" /></span>
+								<h3>Snowflakes Candle</h3>
+								<h4>Price: Rs. 220/-</h4>
+								<p>Delicate snowflake-shaped piece, crafted to capture a crisp, cozy, and serene winter vibe.</p>
+							</article>
+							<!-- 15 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/15.jpg" alt="Patisserie Candle" /></span>
+								<h3>Patisserie Candle</h3>
+								<h4>Price: Rs. 260/-</h4>
+								<p>A hyper-realistic dessert-inspired creation that looks as deliciously sweet and enticing as it smells.</p>
+							</article>
+							<!-- 16 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/16.jpg" alt="Diya Candle" /></span>
+								<h3>Diya Candle</h3>
+								<h4>Price: Rs. 30/-</h4>
+								<p>A handcrafted, terracotta-style diya beautifully embedded with small natural seashells for a coastal touch on tradition.</p>
+							</article>
+							<!-- 17 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/17.jpg" alt="Wax Melt Candle" /></span>
+								<h3>Wax Melt Candle</h3>
+								<h4>Price: Rs. 30/-</h4>
+								<p>Highly aromatic soy wax melts providing a deeply fragrant, long-lasting, and completely flame-free scent experience.</p>
+							</article>
+							<!-- 18 -->
+							<article class="col-6 col-12-xsmall work-item">
+								<span class="image fit"><img src="images/thumbs/18.jpg" alt="Heart Candle" /></span>
 								<h3>Heart Candle</h3>
-								<h4>Price: Rs.70</h4>
-								<p>Beautiful heart-shaped soy wax candle perfect for gifting and celebrating love.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<span class="image fit"><img src="images/thumbs/12.jpg" alt="Waxmelts" /></span>
-								<h3>Waxmelts</h3>
-								<h4>Price: Rs.30</h4>
-								<p>Aromatic soy wax melts for a long-lasting, flame-free fragrance experience.</p>
+								<h4>Price: Rs. 80/-</h4>
+								<p>A classic, beautifully sculpted heart-shaped soy wax candle, perfect for thoughtful gifting and celebrating love.</p>
 							</article>
 						</div>
 						<ul class="actions">
@@ -148,7 +227,7 @@
 
 				<section id="three">
 						<h2>Leave a Positive Impact</h2>
-						<p>Interested in exploring our products for your store, or looking to elevate your corporate gifting? Send us a message to discuss bulk orders, custom hampers, and how we can tailor our sustainable creations to match your brand identity.</p>
+						<p>Interested in exploring our products for your store, or looking to elevate your corporate gifting? Send us a message to discuss bulk orders, custom hampers, workshop bookings, and how we can tailor our sustainable creations to match your brand identity.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
 								
@@ -161,7 +240,7 @@
 											<input type="email" name="email" id="email" placeholder="Email Address" required />
 										</div>
 										<div class="col-12">
-											<input type="text" name="product" id="product" placeholder="Which products or hampers are you interested in?" required />
+											<input type="text" name="product" id="product" placeholder="Which products, hampers, or workshops are you interested in?" required />
 										</div>
 										<div class="col-12">
 											<textarea name="message" id="message" placeholder="Additional Message (Optional)" rows="4"></textarea>
